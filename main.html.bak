@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAIR CODE KERM</title>
+  <style>
+    /* Body styling */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Roboto', 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.3); /* Increased opacity */
+      z-index: -1;
+      animation: fadeInOut 6s ease-in-out infinite;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); /* Adding glow effect */
+    }
+
+    /* Animation for the background text */
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Button styling */
+    .btn {
+      --color: #FFC0CB;
+      --color2: rgb(10, 25, 30);
+      width: 200px;
+      padding: 0.8em 1.75em;
+      background-color: transparent;
+      border-radius: 6px;
+      border: 0.3px solid var(--color);
+      transition: 0.5s ease-in-out;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      font-weight: 900;
+      font-size: 17px;
+      text-transform: uppercase;
+      color: var(--color);
+      margin-bottom: 10px;
+    }
+
+    .btn::after, .btn::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform: skew(90deg) translate(-50%, -50%);
+      position: absolute;
+      inset: 50%;
+      left: 25%;
+      z-index: -1;
+      transition: 0.5s ease-out;
+      background-color: var(--color);
+    }
+
+    .btn::before {
+      top: -50%;
+      left: -25%;
+      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .btn:hover::before {
+      transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .btn:hover::after {
+      transform: skew(45deg) translate(-50%, -50%);
+    }
+
+    .btn:hover {
+      color: var(--color2);
+      background-color: var(--color); /* Background change on hover */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Glow effect */
+    }
+
+    .btn:active {
+      filter: brightness(0.7);
+      transform: scale(0.98);
+    }
+
+    /* Snow animation */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      font-size: 1em;
+      color: white;
+      animation: fall linear infinite, sway ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes sway {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+    }
+
+    /* Footer styling */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      z-index: 1;
+    }
+
+    /* Light effects */
+    .light {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: lightAnimation 2s infinite ease-in-out;
+    }
+
+    @keyframes lightAnimation {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.7;
+      }
+      25% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateX(50px) translateY(50px);
+        opacity: 0.7;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-50px) translateY(-50px);
+        opacity: 0.7;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Buttons -->
+  <button onclick="window.open(`/pair`)" class="btn">PAIR CODE</button>
+  <button onclick="window.open(`https://github.com/itx-alii-raza`)" class="btn">GITHUB</button>
+  <button onclick="window.open(`https://github.com/itx-alii-raza/ALI-MD`)" class="btn">REPO</button>
+  <button onclick="window.open(`https://wa.me/+923003588997`)" class="btn">WHATSAPP</button>
+  <button onclick="window.open(`https://dashboard.heroku.com/new?template=https://github.com/itx-alii-raza/ALI-MD`)" class="btn">DEPLOY</button>
+  <button onclick="window.open(`https://whatsapp.com/channel/0029VaoRxGmJpe8lgCqT1T2h`)" class="btn">CHANNEL</button>
+
+  <!-- Footer -->
+  <footer id="copyright"></footer>
+
+  <!-- Snowflakes -->
+  <script>
+    function createSnowflakes() {
+      const count = 50; // Number of snowflakes
+      const body = document.body;
+
+      for (let i = 0; i < count; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.innerHTML = '❄';
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+        snowflake.style.animationDuration = Math.random() * 5 + 5 + 's'; // Fall speed
+        snowflake.style.animationDelay = Math.random() * 5 + 's';
+        snowflake.style.opacity = Math.random();
+
+        body.appendChild(snowflake);
+      }
+    }
+
+    function createLights() {
+      const body = document.body;
+      for (let i = 0; i < 50; i++) {
+        const light = document.createElement('div');
+        light.className = 'light';
+        light.style.left = Math.random() * window.innerWidth + 'px';
+        light.style.top = Math.random() * window.innerHeight + 'px';
+        light.style.animationDuration = Math.random() * 2 + 2 + 's'; // Varying speed of light movement
+        body.appendChild(light);
+      }
+    }
+
+    function updateCopyright() {
+      const footer = document.getElementById('copyright');
+      const now = new Date();
+      const options = { timeZone: 'Africa/Douala', hour12: false };
+      const date = now.toLocaleDateString('en-GB', options);
+      const time = now.toLocaleTimeString('en-GB', options);
+
+      footer.textContent = `©2025 ${date} ${time} | ALI INXIDE🇵🇰`;
+    }
+
+    // Initialize snowflakes, lights, and copyright
+    createSnowflakes();
+    createLights();
+    updateCopyright();
+    setInterval(updateCopyright, 1000); // Update every second
+  </script>
+
+</body>
+</html>
