@@ -78,7 +78,7 @@ router.get('/', async (req, res) => {
                     // Send confirmation message
                     await GlobalTechInc.sendMessage(userJid, { text: '> *CONNECTED SUCCESSFULLY ✅*  
 ╭────「 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 」────◆  
-│ *ʏᴏᴜ'ᴠᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴛʜᴇ ғɪʀsᴛ sᴛᴇᴘ*
+│ *ʏᴏᴜ ᴠᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴛʜᴇ ғɪʀsᴛ sᴛᴇᴘ*
 │ *ᴛᴏ ᴅᴇᴘʟᴏʏ ᴀ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ.𓆈*
 │─────────────────────
 │ *∘ ᴄʜᴀɴɴᴇʟ:* 
